@@ -1,5 +1,5 @@
 import React from "react";
-import { FloatPlaceHolderInput, OleUpInput } from "../inputs/input.placeholder";
+import { FloatPlaceHolderInput, OleUpInput } from "../inputs/InputFloat";
 import { ContainerForm } from "./form.styled";
 
 const PlaceholderForm = () => {
