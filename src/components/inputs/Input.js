@@ -5,7 +5,7 @@ import getIconByInputName from '../../utils/icons.function';
 import { Circle, CircleDynamic, CircleStatic } from './input.styled';
 
 
-export const CircleInput = ({nocircle, input}) => {
+export const FullMoonInput = ({nocircle, input}) => {
 
   const firstname = useInput('', 'text', input, input);
 
@@ -29,7 +29,7 @@ export const CircleInput = ({nocircle, input}) => {
 };
 
 
-export const CircleDynamicInput = ({nocircle, input}) => {
+export const WestSideInput = ({nocircle, input}) => {
 
   const firstname = useInput('', input, input, input);
 
@@ -53,7 +53,7 @@ export const CircleDynamicInput = ({nocircle, input}) => {
 };
 
 
-export const CircleStaticInput = ({nocircle, input}) => {
+export const NoFaceInput = ({nocircle, input}) => {
 
   const firstname = useInput('', 'text', 'firstname', 'firstname');
 
