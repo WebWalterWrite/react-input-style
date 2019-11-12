@@ -1,8 +1,8 @@
 import React from 'react';
 import logo from './logo.svg';
-import CircleForm from './components/forms/form.circle';
-import SquareForm from './components/forms/form.square';
-import PlaceholderForm from './components/forms/forms.placeholder';
+import CircleForm from './components/forms/Circle';
+import SquareForm from './components/forms/Square';
+import PlaceholderForm from './components/forms/Float';
 function App() {
   return (
     <>
