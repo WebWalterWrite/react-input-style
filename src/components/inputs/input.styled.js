@@ -1,5 +1,4 @@
-import styled, {css} from 'styled-components/macro';
-
+import styled, { css } from "styled-components/macro";
 
 const common = css`
   display: flex;
@@ -7,114 +6,175 @@ const common = css`
   margin: 0 auto;
   margin-bottom: 1em;
   height: auto;
-  input{
+  input {
     background: transparent;
     border: none;
     width: 100%;
     outline: none;
     font-size: 1.5em;
-    color: #FEFEFEFE;
+    color: #fefefefe;
     margin-left: 5px;
-    padding: .2em;
+    padding: 0.2em;
   }
 `;
 
+/**
+ #####################
+ NoFaceInput
+ #####################
+ */
 export const CircleStatic = styled.div`
-${common}
-border: solid 2px #A9EE8A;
-border-radius:${props => props.nocircle ? 0 : '25px'};
-  svg{
-    color:#A9EE8A;
+  ${common}
+  border: solid 2px #A9EE8A;
+  border-radius: ${props => (props.nocircle ? 0 : "25px")};
+  svg {
+    color: #a9ee8a;
     width: 100%;
-    border-radius: ${props => props.nocircle ? 0 : '50%'};
-    padding: .2em;
+    border-radius: ${props => (props.nocircle ? 0 : "50%")};
+    padding: 0.2em;
     transition: all 200ms ease-in-out;
   }
 `;
 
+/**
+ #####################
+ FullMoonInput
+ #####################
+ */
 export const Circle = styled.div`
-${common}
-border: solid 2px #C0AEE7;
-border-radius:${props => props.nocircle ? 0 : '25px'};
-  svg{
-    border-right: solid 2px #C0AEE7;
-    border-top: solid 2px #C0AEE7;
-    border-bottom: solid 2px #C0AEE7;
-    color:#C0AEE7;
-    ${props => props.active && {background:'#C0AEE7', color: '#FEFEFEFE' }}
+  ${common}
+  border: solid 2px #C0AEE7;
+  border-radius: ${props => (props.nocircle ? 0 : "25px")};
+  svg {
+    border-right: solid 2px #c0aee7;
+    border-top: solid 2px #c0aee7;
+    border-bottom: solid 2px #c0aee7;
+    color: #c0aee7;
+    ${props => props.active && { background: "#C0AEE7", color: "#FEFEFEFE" }}
     width: 100%;
-    border-radius: ${props => props.nocircle ? 0 : '50%'};
-    padding: .2em;
+    border-radius: ${props => (props.nocircle ? 0 : "50%")};
+    padding: 0.2em;
     transition: all 200ms ease-in-out;
   }
 `;
 
+/**
+ #####################
+ WestSideInput
+ #####################
+ */
 export const CircleDynamic = styled.div`
-${common}
-border: solid 2px #FFF36D;
-border-radius:${props => props.nocircle ? 0 : '25px'};
-input{
-  ${props => props.active && { 
-      marginLeft: '-22px'
-    }}
+  ${common}
+  border: solid 2px #FFF36D;
+  border-radius: ${props => (props.nocircle ? 0 : "25px")};
+  input {
+    ${props =>
+      props.active && {
+        marginLeft: "-22px"
+      }}
   }
-svg{
-  border-right: solid 2px #FFF36D;
-  border-top: solid  #FFF36D ${props => props.nocircle ? '1px' : '2px'};
-  border-bottom: solid  #FFF36D ${props => props.nocircle ? '1px' : '2px'};
-  color:#FFF36D;
-  ${props => props.active && { 
-    transform: 'translateX(-45px)',
-    border: 'none',
-    padding: '.6em'
-  }}
+  svg {
+    border-right: solid 2px #fff36d;
+    border-top: solid #fff36d ${props => (props.nocircle ? "0px" : "2px")};
+    border-bottom: solid #fff36d ${props => (props.nocircle ? "0px" : "2px")};
+    color: #fff36d;
+    ${props =>
+      props.active && {
+        transform: "translateX(-45px)",
+        border: "none",
+        padding: ".6em"
+      }}
+    width: 100%;
+    border-radius: ${props => (props.nocircle ? 0 : "50%")};
+    padding: 0.2em;
+    transition: all 200ms ease-in-out;
+  }
+`;
+
+/**
+ #####################
+ OleUpInput
+ #####################
+ */
+export const Input = styled.div`
+  position: relative;
+  display: flex;
+  border: solid 2px ${props => props.color};
+  width: 300px;
+  padding: 0.2em;
+  input {
+    width: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    padding: 0.2em;
+    font-size: 1.5em;
+    color: #fefefefe;
+  }
+`;
+
+export const Placeholder = styled.div`
+  position: absolute;
+  top: ${props => (props.active ? "-42px" : 0)};
+  left: -5px;
+  z-index: -1;
+  display: flex;
+  align-items: center;
   width: 100%;
-  border-radius: ${props => props.nocircle ? 0 : '50%'};
-  padding: .2em;
   transition: all 200ms ease-in-out;
-}
+  span {
+    font-size: 1.5em;
+    color: #8e8e8e;
+    font-family: system-ui;
+    -webkit-appearance: textfield;
+    letter-spacing: normal;
+  }
+  svg {
+    color: #c0aee7;
+    padding: 0.2em;
+  }
 `;
 
 
 /**
- * Component : input.placeholder
+ #####################
+ FloatPlaceHolderInput
+ #####################
  */
-
- export const Input = styled.div`
- position: relative;
- display: flex;
- border: solid 2px #C0AEE7;
- width: 300px;
- padding: .2em;
- input{
-   width: 100%;
-   background: transparent;
-   border: none;
-   outline: none;
-   padding:.2em;
-   font-size:1.5em;
-   color: #FEFEFEFE;
- }
- `;
-
- export const Placeholder = styled.div`
- position: absolute;
- top:${props => props.active ? '-42px' : 0};
- left: -5px;
- z-index:-1;
- display: flex;
- align-items: center;
- width: 100%;
- transition: all 200ms ease-in-out;
- span{
-   font-size:1.5em;
-   color:#8e8e8e;
-   font-family: system-ui;
-   -webkit-appearance: textfield;
-   letter-spacing: normal;
+export const FloatPlaceholder = styled.div`
+  position: relative;
+  display: flex;
+  border: solid 2px #fff36d;
+  width: 300px;
+  .box-placeholder {
+    display: flex;
+    align-items: center;
+    input {
+      width: 100%;
+      background: transparent;
+      border: none;
+      outline: none;
+      padding: 0.1em;
+      font-size: 1.5em;
+      color: #fefefefe;
+      text-transform: lowercase;
+    }
+    span {
+      position: absolute;
+      z-index: -1;
+      bottom: ${props => props.active && "25px"};
+      left: ${props => (props.active ? "15px" : "45px")};
+      font-size: 1.5em;
+      transform: ${props => props.active && "scale(.6)"};
+      color: ${props => (props.active ? "#fff36d" : "#8e8e8e")};
+      font-family: system-ui;
+      -webkit-appearance: textfield;
+      letter-spacing: normal;
+      transition: all 200ms ease-in-out;
+    }
   }
- svg{
-  color:#C0AEE7;
-  padding: .2em;
- }
- `
+  svg {
+    color: #fff36d;
+    padding: 0.2em;
+  }
+`;
