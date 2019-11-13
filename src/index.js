@@ -22,6 +22,10 @@ header{
   img{
     width: 20vmin;
   }
+  h1{
+    font-size: 2.5em;
+    color:'#FEFEFEFE' !important;
+  }
 }
 
 `;
