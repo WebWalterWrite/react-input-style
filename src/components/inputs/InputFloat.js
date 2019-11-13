@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import useInput from "../../hooks/input.hooks";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import getIconByInputName from "../../utils/icons.function";
-import { Input, Placeholder, FloatPlaceholder } from "./input.styled";
+import { Input, Placeholder, FloatPlaceholder, WestSideFloat } from "./input.styled";
 
 export const OleUpInput = ({ input }) => {
   const firstname = useInput("", "text", null, input);
@@ -24,6 +24,36 @@ export const OleUpInput = ({ input }) => {
   );
 };
 
+
+export const WestSideFloatInput = ({input}) => {
+
+  const inputType = useInput('', 'text', null, input);
+
+  const [active, setActive] = useState(false);
+
+  const setBlur = e => {
+    const value = e.target.value;
+    return !value.length && setActive(false)
+  }
+
+  return (
+    <WestSideFloat active={active}>
+      <FontAwesomeIcon icon={getIconByInputName(input)} size="3x" />
+      <div className="westside-box-placeholder">
+        <span>{input}</span>
+        <input
+          {...inputType}
+          onFocus={() => setActive(true)}
+          onBlur={setBlur}
+        />
+      </div>
+    </WestSideFloat>
+  )
+};
+
+
+
+
 export const FloatPlaceHolderInput = ({ input }) => {
   const inputType = useInput("", "text", null, input);
 
@@ -36,7 +66,8 @@ export const FloatPlaceHolderInput = ({ input }) => {
 
   return (
     <FloatPlaceholder active={active}>
-      <FontAwesomeIcon icon={getIconByInputName(input)} size="3x" />
+      <FontAwesomeIcon icon={active ? getIconByInputName(input, 'full') : getIconByInputName(input, 'light')} size="3x" />
+
       <div className="box-placeholder">
         <span>{input}</span>
         <input
