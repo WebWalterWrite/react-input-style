@@ -6,8 +6,9 @@ import PlaceholderForm from './components/forms/Float';
 function App() {
   return (
     <>
-      <header className="App-header">
+      <header>
         <img src={logo} className="App-logo" alt="logo" />
+        <h1>React-Vanilla-Input by</h1>
       </header>
       <main>
         <CircleForm />
