@@ -7,16 +7,16 @@ const SquareForm = () => {
   return (
     <ContainerForm>
       <div>
-        <h3>fullMoon Input</h3>
+        <h3>fullMoon square Input</h3>
         <FullMoonInput nocircle input="lastname" />
       </div>
 
       <div>
-        <h3>westwide input</h3>
+        <h3>westside square input</h3>
         <WestSideInput nocircle input="lastname" />
       </div>
       <div>
-        <h3>noface input</h3>
+        <h3>noface square input</h3>
         <NoFaceInput nocircle input="lastname" />
       </div>
     </ContainerForm>
