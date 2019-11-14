@@ -26,10 +26,10 @@ const common = css`
  */
 export const CircleStatic = styled.div`
   ${common}
-  border: solid 2px #009ACE;
+  border: solid 2px ${props => props.color && props.color};
   border-radius: ${props => (props.nocircle ? 0 : "25px")};
   svg {
-    color: #009ACE;
+    color: ${props => props.color && props.color};
     width: 100%;
     border-radius: ${props => (props.nocircle ? 0 : "50%")};
     padding: 0.2em;
@@ -195,7 +195,7 @@ export const WestSideFloat = styled.div`
   position: relative;
   display: flex;
   border: none;
-  border-bottom: solid 2px #fff36d;
+  border-bottom: solid 2px ${props => props.color && props.color};
   width: 250px;
   .westside-box-placeholder {
     display: flex;
@@ -218,7 +218,7 @@ export const WestSideFloat = styled.div`
       left: ${props => (props.active ? "-20px" : "45px")};
       font-size: 1.5em;
       transform: ${props => props.active && "scale(.6)"};
-      color: ${props => (props.active ? "#fff36d" : "#8e8e8e")};
+      color: ${props => (props.active ? props.color : "#8e8e8e")};
       font-family: system-ui;
       -webkit-appearance: textfield;
       background: transparent;
@@ -227,7 +227,7 @@ export const WestSideFloat = styled.div`
     }
   }
   svg {
-    color: #fff36d;
+    color: ${props => props.color && props.color};
     padding: 0.2em;
     ${props =>
     props.active && {

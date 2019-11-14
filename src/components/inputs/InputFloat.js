@@ -4,8 +4,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import getIconByInputName from "../../utils/icons.function";
 import { Input, Placeholder, FloatPlaceholder, WestSideFloat } from "./input.styled";
 
-export const OleUpInput = ({ input }) => {
-  const firstname = useInput("", "text", null, input);
+export const FullMoonFloatInput = ({ input }) => {
+  const firstname = useInput("", input, {noplaceholder: true});
 
   const [active, setActive] = useState(false);
 
@@ -25,9 +25,9 @@ export const OleUpInput = ({ input }) => {
 };
 
 
-export const WestSideFloatInput = ({input}) => {
+export const WestSideFloatInput = ({input, ...args}) => {
 
-  const inputType = useInput('', 'text', null, input);
+  const inputType = useInput('', input, {noplaceholder: true});
 
   const [active, setActive] = useState(false);
 
@@ -37,7 +37,7 @@ export const WestSideFloatInput = ({input}) => {
   }
 
   return (
-    <WestSideFloat active={active}>
+    <WestSideFloat active={active} {...args}>
       <FontAwesomeIcon icon={getIconByInputName(input)} size="3x" />
       <div className="westside-box-placeholder">
         <span>{input}</span>
@@ -54,8 +54,8 @@ export const WestSideFloatInput = ({input}) => {
 
 
 
-export const FloatPlaceHolderInput = ({ input }) => {
-  const inputType = useInput("", "text", null, input);
+export const NoFaceFloatInput = ({ input }) => {
+  const inputType = useInput("", input, { noplaceholder: true });
 
   const [active, setActive] = useState(false);
 

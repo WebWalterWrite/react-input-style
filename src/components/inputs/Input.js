@@ -5,9 +5,9 @@ import getIconByInputName from '../../utils/icons.function';
 import { Circle, CircleDynamic, CircleStatic } from './input.styled';
 
 
-export const FullMoonInput = ({nocircle, input}) => {
+export const FullMoonInput = ({nocircle, input, color }) => {
 
-  const firstname = useInput('', 'text', input, input);
+  const firstname = useInput('', input);
 
   const [active, setActive] = useState(false);
 
@@ -17,7 +17,7 @@ export const FullMoonInput = ({nocircle, input}) => {
   }
 
   return (
-    <Circle nocircle={nocircle} active={active}>
+    <Circle nocircle={nocircle} active={active} color={color}>
       <FontAwesomeIcon icon={getIconByInputName(input)} size="3x" />
       <input
         {...firstname}
@@ -29,9 +29,10 @@ export const FullMoonInput = ({nocircle, input}) => {
 };
 
 
-export const WestSideInput = ({nocircle, input}) => {
+export const WestSideInput = ({nocircle, input, ...args}) => {
 
-  const firstname = useInput('', input, input, input);
+
+  const firstname = useInput('', input);
 
   const [active, setActive] = useState(false);
 
@@ -41,7 +42,7 @@ export const WestSideInput = ({nocircle, input}) => {
   }
 
   return (
-    <CircleDynamic nocircle={nocircle} active={active}>
+    <CircleDynamic nocircle={nocircle} active={active} {...args}>
       <FontAwesomeIcon icon={getIconByInputName(input)} size="3x" />
       <input
         {...firstname}
@@ -53,9 +54,9 @@ export const WestSideInput = ({nocircle, input}) => {
 };
 
 
-export const NoFaceInput = ({nocircle, input}) => {
+export const NoFaceInput = ({nocircle, input, ...args }) => {
 
-  const firstname = useInput('', 'text', 'firstname', 'firstname');
+  const firstname = useInput('', input);
 
   const [active, setActive] = useState(false);
 
@@ -64,7 +65,7 @@ export const NoFaceInput = ({nocircle, input}) => {
     return !value.length && setActive(false)
   }
   return (
-    <CircleStatic nocircle={nocircle} active={active}>
+    <CircleStatic nocircle={nocircle} active={active} {...args}>
       <FontAwesomeIcon icon={active ? getIconByInputName(input, 'full') : getIconByInputName(input, 'light')} size="3x" />
       <input
         {...firstname}
