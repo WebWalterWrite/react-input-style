@@ -24,7 +24,7 @@ header{
   }
   h1{
     font-size: 2.5em;
-    color:'#FEFEFEFE' !important;
+    color:#FEFEFEFE;
   }
 }
 

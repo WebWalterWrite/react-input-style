@@ -8,7 +8,7 @@ function App() {
     <>
       <header>
         <img src={logo} className="App-logo" alt="logo" />
-        <h1>React-Vanilla-Input by</h1>
+        <h1>React-Input-Farm by</h1>
       </header>
       <main>
         <CircleForm />
