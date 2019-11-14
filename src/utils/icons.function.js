@@ -1,23 +1,16 @@
-import { fullUser, lightUser, email } from './icons';
-
+import { fullUser, lightUser, fullEmail, lightEmail, fullMobile, lightMobile, password } from "./icons";
 
 const iconsList = {
-  fullUser: fullUser,
-  lightUser: lightUser,
-  email: email,
-}
-
-const getIconByInputName = (inputName, type) => {
-
-  switch(inputName){
-    case 'firstname' :
-    case 'lastname' :
-      return type === 'light' ? iconsList.lightUser : iconsList.fullUser ;
-    case 'email':
-      return iconsList.email;
-    default: return
-  }
+  firstname: { full: fullUser, light: lightUser },
+  lastname: { full: fullUser, light: lightUser },
+  email: { full: fullEmail, light: lightEmail },
+  phone: {full: fullMobile, light: lightMobile},
+  password: { full: password, light: lightUser }
 };
 
+const getIconByInputName = (inputName, type) => {
+  const icon = Object.keys(iconsList).find(key => key === inputName);
+  return type === "light" ? iconsList[icon].light : iconsList[icon].full;
+};
 
 export default getIconByInputName;
