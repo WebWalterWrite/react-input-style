@@ -1,5 +1,5 @@
 import React from "react";
-import { FloatPlaceHolderInput, OleUpInput, WestSideFloatInput } from "../inputs/InputFloat";
+import { NoFaceFloatInput, FullMoonFloatInput, WestSideFloatInput } from "../inputs/InputFloat";
 import { ContainerForm } from "./form.styled";
 
 const PlaceholderForm = () => {
@@ -7,16 +7,16 @@ const PlaceholderForm = () => {
     <ContainerForm>
       <div>
         <h3>fullmoon float input</h3>
-        <OleUpInput input="firstname" />
+        <FullMoonFloatInput input="firstname" />
       </div>
 
       <div>
         <h3>west side float input</h3>
-        <WestSideFloatInput input="firstname"/>
+        <WestSideFloatInput input="firstname" color="#FFF36D" />
       </div>
       <div>
         <h3>noface float input</h3>
-        <FloatPlaceHolderInput input="firstname" />
+        <NoFaceFloatInput input="firstname" />
       </div>
     </ContainerForm>
   );

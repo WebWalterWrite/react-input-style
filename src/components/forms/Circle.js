@@ -8,7 +8,7 @@ const CircleForm = () => {
     <ContainerForm>
       <div>
         <h3>fullMoon circle Input</h3>
-        <FullMoonInput input="lastname" />
+        <FullMoonInput input="email" />
       </div>
 
       <div>
@@ -17,10 +17,10 @@ const CircleForm = () => {
       </div>
       <div>
         <h3>noface cirlce input</h3>
-        <NoFaceInput input="lastname" />
+        <NoFaceInput input="lastname" color="#009ACE" />
       </div>
     </ContainerForm>
-  )
+  );
 };
 
 export default CircleForm;
