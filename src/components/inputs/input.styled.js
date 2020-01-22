@@ -15,7 +15,6 @@ const common = css`
     color: #fefefefe;
     margin-left: 5px;
     padding: 0.2em;
-
   }
 `;
 
@@ -66,25 +65,25 @@ export const Circle = styled.div`
  */
 export const CircleDynamic = styled.div`
   ${common}
-  border: solid 2px #FFF36D;
+  border: solid 2px #2dde98;
   border-radius: ${props => (props.nocircle ? 0 : "25px")};
   input {
     ${props =>
-    props.active && {
-      marginLeft: "-22px"
-    }}
+      props.active && {
+        marginLeft: "-22px"
+      }}
   }
   svg {
-    border-right: solid 2px #fff36d;
-    border-top: solid #fff36d ${props => (props.nocircle ? "0px" : "2px")};
-    border-bottom: solid #fff36d ${props => (props.nocircle ? "0px" : "2px")};
-    color: #fff36d;
+    border-right: solid 2px #2dde98;
+    border-top: solid #2dde98 ${props => (props.nocircle ? "0px" : "2px")};
+    border-bottom: solid #2dde98 ${props => (props.nocircle ? "0px" : "2px")};
+    color: #2dde98;
     ${props =>
-    props.active && {
-      transform: "translateX(-45px)",
-      border: "none",
-      padding: ".6em"
-    }}
+      props.active && {
+        transform: "translateX(-45px)",
+        border: "none",
+        padding: ".6em"
+      }}
     width: 100%;
     border-radius: ${props => (props.nocircle ? 0 : "50%")};
     padding: 0.2em;
@@ -113,9 +112,10 @@ export const Input = styled.div`
     font-size: 1.5em;
     color: #fefefefe;
   }
-  .fa-3x{
-    ${props => props.active && { fontSize: '2em' }}
-    ${props => props.active && { backgroundColor: "#C0AEE7", color: "#FEFEFEFE" }};
+  .fa-3x {
+    ${props => props.active && { fontSize: "2em" }}
+    ${props =>
+      props.active && { backgroundColor: "#C0AEE7", color: "#FEFEFEFE" }};
     transition: all 200ms ease-in-out;
   }
 `;
@@ -123,7 +123,7 @@ export const Input = styled.div`
 export const Placeholder = styled.div`
   position: absolute;
   top: ${props => (props.active ? "-25px" : 0)};
-  left: ${props => (props.active ? 0 : '-5px')};
+  left: ${props => (props.active ? 0 : "-5px")};
   z-index: -1;
   display: flex;
   align-items: center;
@@ -136,14 +136,13 @@ export const Placeholder = styled.div`
     -webkit-appearance: textfield;
     background: transparent;
     letter-spacing: 2px;
-    margin-left: ${props => (props.active && '5px')};
+    margin-left: ${props => props.active && "5px"};
   }
   svg {
     color: #c0aee7;
     padding: 0.2em;
   }
 `;
-
 
 /**
  #####################
@@ -154,7 +153,7 @@ export const FloatPlaceholder = styled.div`
   position: relative;
   display: flex;
   border: none;
-  border-bottom: solid 2px #009ACE;
+  border-bottom: solid 2px #009ace;
   width: 250px;
   .box-placeholder {
     display: flex;
@@ -185,11 +184,10 @@ export const FloatPlaceholder = styled.div`
     }
   }
   svg {
-    color: #009ACE;
+    color: #009ace;
     padding: 0.2em;
   }
 `;
-
 
 export const WestSideFloat = styled.div`
   position: relative;
@@ -230,11 +228,99 @@ export const WestSideFloat = styled.div`
     color: ${props => props.color && props.color};
     padding: 0.2em;
     ${props =>
-    props.active && {
-      transform: "translateX(-45px)",
-      border: "none",
+      props.active && {
+        transform: "translateX(-45px)",
+        border: "none"
+      }}
+    transition: all 200ms ease-in-out;
+  }
+`;
+
+/**
+ #####################
+ FrameInput
+ #####################
+ */
+export const FrameDynamic = styled.div`
+  ${common}
+  position: relative;
+  display: flex;
+  border: solid 2px ${props => (props.active ? "#ffac25" : "#8e8e8e")};
+  border-radius: 8px;
+  height:52px;
+  transition: all 200ms ease-in-out;
+  .Frame-placeholder{
+    position: absolute;
+    z-index: ${props => (props.active ? 2 : -1)};
+    top: ${props => (props.active ? "-25px" : "0px")};
+    display: flex;
+    align-items: center;
+    left: ${props => (props.active ? "-32px" : "0px")};
+    bottom: ${props => (props.active ? "25px" : "-5px")};
+    transform: ${props => props.active && "scale(.5)"};
+    transition: all 200ms ease-in-out;
+    border: ${props => (props.active && "solid 2px #ffac25")};
+    border-radius: 8px;
+    background: ${props => (props.active && "#20222A")};
+    color:  ${props => (props.active ? "#FFFFFF" : "#20222A")};
+    padding: 0 .4em 0 .2em;
+    span{
+      font-size: 1.5em;
+      color: ${props => (props.active ? "#FFFFFF" : "#8e8e8e")};
+      font-family: system-ui;
+      -webkit-appearance: textfield;
+      background: transparent;
+      letter-spacing: 2px;
+    }
+    svg{
+    padding: 0.2em;
+    color: ${props => (props.active ? "#FFFFFF" : "#ffac25")};
+    background:"#ffac25"
+    }
+  }
+ `;
+
+
+/**
+ #####################
+ WestSideFrameInput
+ #####################
+ */
+export const WestSideFrame = styled.div`
+  ${common}
+  position: relative;
+  display: flex;
+  align-items: center;
+  border: solid 2px ${props => (props.active ? "#ffac25" : "#8e8e8e")};
+  height:52px;
+  transition: all 200ms ease-in-out;
+  span{
+    position: absolute;
+    top: ${props => props.active && "-12px"};
+    left: ${props => props.active ? "20px" : "50px"};
+    z-index: ${props => (props.active ? 2 : -1)};
+    font-size: ${props => props.active ? "1em" : "1.5em"};
+    color: ${props => (props.active ? "#ffac25" : "#8e8e8e")};
+    font-family: system-ui;
+    -webkit-appearance: textfield;
+    background: #20222A;
+    padding: ${props => props.active ? "0 .2em 0 .3em" : "none"};
+    letter-spacing: 2px;
+    transition: all 200ms ease-in-out;
+  }
+  svg{
+    position: absolute;
+    padding: .2em;
+    ${props => props.active && {
+      background: "#ffac25",
+      fontSize: "2em",
+      transform: "translateX(-16px)",
 
     }}
+    color: ${props => props.active ? "#ffffff" : "#ffac25"};
     transition: all 200ms ease-in-out;
+  }
+  input{
+    margin-left: ${props => props.active && "20px"};
   }
 `;
