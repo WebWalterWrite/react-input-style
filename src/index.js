@@ -1,8 +1,8 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { createGlobalStyle } from 'styled-components';
+import React from "react";
+import ReactDOM from "react-dom";
+import { createGlobalStyle } from "styled-components";
 
-import App from './App';
+import App from "./App";
 
 const GlobalStyled = createGlobalStyle`
 
@@ -17,15 +17,35 @@ body{
   background: #20222A;
 }
 header{
+  height: 15vh;
+  padding: .5em;
+  .Header-repo{
+    text-align: right;
+    a{
+      color: white;
+      :hover{
+        color: #FFF36D;
+      }
+    }
+  }
+  .Header-title{
+    display: flex;
+    align-items:center;
+    img{
+      width: 10vmin;
+    }
+    h1{
+      font-size: 2.5em;
+      color:#FEFEFEFE;
+    }
+  }
+}
+main{
+  height: 80vh;
   display: flex;
-  align-items:center;
-  img{
-    width: 20vmin;
-  }
-  h1{
-    font-size: 2.5em;
-    color:#FEFEFEFE;
-  }
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 2em;
 }
 
 `;
@@ -34,5 +54,5 @@ ReactDOM.render(
     <GlobalStyled />
     <App />
   </>,
-  document.getElementById('root'));
-
+  document.getElementById("root")
+);
